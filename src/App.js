@@ -1,9 +1,14 @@
-import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+import React, { Component } from "react"
+import Slider from "./components/Slider"
 
 class App extends Component {
   render() {
-    return <HelloWorld />
+    console.log("rendering")
+    return (
+      <div>
+        <Slider />
+      </div>
+    )
   }
 }
 
