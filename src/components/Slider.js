@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 class Slider extends Component {
   state = {
-    hue: 50,
+    hue: 180,
     saturation: 50,
     lightness: 50
   }
@@ -23,6 +23,13 @@ class Slider extends Component {
       lightness: event.target.value
     })
   }
+  randomColorChange = event => {
+    this.setState({
+      hue: Math.ceil(Math.random() * 360),
+      saturation: Math.ceil(Math.random() * 100),
+      lightness: Math.ceil(Math.random() * 100)
+    })
+  }
 
   render() {
     return (
@@ -34,35 +41,51 @@ class Slider extends Component {
           }%)`
         }}
       >
-        <span>H</span>
-        <input
-          type='range'
-          min='0'
-          max='100'
-          value={this.state.hue}
-          onChange={this.changeHue}
-        />
-        <p>{this.state.hue}</p>
-        <span>S</span>
-        <input
-          type='range'
-          min='0'
-          max='100'
-          onChange={this.changeSaturation}
-          value={this.state.saturation}
-        />
-        <p>{this.state.saturation}</p>
-        <span>L</span>
-        <input
-          type='range'
-          min='0'
-          max='100'
-          onChange={this.changeLightness}
-          value={this.state.lightness}
-        />
-        <p>{this.state.lightness}</p>
-
         <div>Color display</div>
+        <span className='H-slider'>
+          <p>H</p>
+          <input
+            type='range'
+            min='0'
+            max='360'
+            value={this.state.hue}
+            onChange={this.changeHue}
+          />
+          <p>{this.state.hue}</p>
+        </span>
+        <span className='S-slider'>
+          <p>S</p>
+          <input
+            type='range'
+            min='0'
+            max='100'
+            onChange={this.changeSaturation}
+            value={this.state.saturation}
+          />
+          <p>{this.state.saturation}</p>
+        </span>
+        <span className='L-slider'>
+          <p>L</p>
+          <input
+            type='range'
+            min='0'
+            max='100'
+            onChange={this.changeLightness}
+            value={this.state.lightness}
+          />
+          <p>{this.state.lightness}</p>
+        </span>
+        <section />
+
+        <section className='random-button-section'>
+          <button
+            className='random-button'
+            onClick={this.randomColorChange}
+            value={this.backgroundColor}
+          >
+            {" Random Color Change "}
+          </button>
+        </section>
       </div>
     )
   }

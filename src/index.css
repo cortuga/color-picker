@@ -21,3 +21,13 @@ body {
   width: 100%;
   height: 100%;
 }
+.random-button-section {
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+  height: 5rem;
+}
+.random-button {
+  width: 7rem;
+  height: 4rem;
+}
