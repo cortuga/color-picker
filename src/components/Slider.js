@@ -2,8 +2,8 @@ import React, { Component } from "react"
 
 class Slider extends Component {
   state = {
-    hue: 180,
-    saturation: 50,
+    hue: Math.ceil(Math.random() * 360),
+    saturation: Math.ceil(Math.random() * 100),
     lightness: 50
   }
 
@@ -53,6 +53,7 @@ class Slider extends Component {
           />
           <p>{this.state.hue}</p>
         </span>
+
         <span className='S-slider'>
           <p>S</p>
           <input
@@ -64,6 +65,7 @@ class Slider extends Component {
           />
           <p>{this.state.saturation}</p>
         </span>
+
         <span className='L-slider'>
           <p>L</p>
           <input
@@ -86,6 +88,11 @@ class Slider extends Component {
             {" Random Color Change "}
           </button>
         </section>
+        <h3>
+          {`hsl(${this.state.hue}, ${this.state.saturation}%, ${
+            this.state.lightness
+          }%)`}
+        </h3>
       </div>
     )
   }
