@@ -7,11 +7,27 @@ class Slider extends Component {
     lightness: 50
   }
 
-  const changeHue = () => 
+  changeHue = event => {
+    console.log(event.target.value)
+    this.setState({
+      hue: event.target.value
+    })
+  }
+  changeSaturation = event => {
+    this.setState({
+      saturation: event.target.value
+    })
+  }
+  changeLightness = event => {
+    this.setState({
+      lightness: event.target.value
+    })
+  }
 
   render() {
     return (
       <div
+        className='choco'
         style={{
           backgroundColor: `hsl(${this.state.hue}, ${this.state.saturation}%, ${
             this.state.lightness
@@ -19,16 +35,36 @@ class Slider extends Component {
         }}
       >
         <span>H</span>
-        <input type='range' min='0' max='100' />
+        <input
+          type='range'
+          min='0'
+          max='100'
+          value={this.state.hue}
+          onChange={this.changeHue}
+        />
+        <p>{this.state.hue}</p>
         <span>S</span>
-        <input type='range' min='0' max='100' />
+        <input
+          type='range'
+          min='0'
+          max='100'
+          onChange={this.changeSaturation}
+          value={this.state.saturation}
+        />
+        <p>{this.state.saturation}</p>
         <span>L</span>
-        <input type='range' min='0' max='100' />
+        <input
+          type='range'
+          min='0'
+          max='100'
+          onChange={this.changeLightness}
+          value={this.state.lightness}
+        />
+        <p>{this.state.lightness}</p>
 
-        <div class='color-display'>Color?</div>
+        <div>Color display</div>
       </div>
     )
- 
   }
 }
 
