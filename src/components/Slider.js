@@ -34,16 +34,18 @@ class Slider extends Component {
   render() {
     return (
       <div
-        className='choco'
+        className='main-div'
         style={{
           backgroundColor: `hsl(${this.state.hue}, ${this.state.saturation}%, ${
             this.state.lightness
           }%)`
         }}
       >
-        <div>Color display</div>
-        <span className='H-slider'>
-          <p>H</p>
+        <span className='color-display'>
+          <h1 className='white-bg'>Color display</h1>
+        </span>
+        <section className='H-slider'>
+          <p className='com-name'>Hue</p>
           <input
             type='range'
             min='0'
@@ -52,10 +54,10 @@ class Slider extends Component {
             onChange={this.changeHue}
           />
           <p>{this.state.hue}</p>
-        </span>
+        </section>
 
-        <span className='S-slider'>
-          <p>S</p>
+        <section className='S-slider'>
+          <p className='com-name'>Saturation</p>
           <input
             type='range'
             min='0'
@@ -64,10 +66,10 @@ class Slider extends Component {
             value={this.state.saturation}
           />
           <p>{this.state.saturation}</p>
-        </span>
+        </section>
 
-        <span className='L-slider'>
-          <p>L</p>
+        <section className='L-slider'>
+          <p className='com-name'>Lightness</p>
           <input
             type='range'
             min='0'
@@ -76,8 +78,7 @@ class Slider extends Component {
             value={this.state.lightness}
           />
           <p>{this.state.lightness}</p>
-        </span>
-        <section />
+        </section>
 
         <section className='random-button-section'>
           <button
@@ -88,11 +89,12 @@ class Slider extends Component {
             {" Random Color Change "}
           </button>
         </section>
-        <h3>
+
+        <h4>
           {`hsl(${this.state.hue}, ${this.state.saturation}%, ${
             this.state.lightness
           }%)`}
-        </h3>
+        </h4>
       </div>
     )
   }

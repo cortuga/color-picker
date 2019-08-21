@@ -11,23 +11,47 @@ body {
   min-height: 100%;
 }
 .color-display {
-  height: 150px;
-  width: 150px;
+  height: 20rem;
+  width: 100%;
+}
+.white-bg {
   background-color: white;
+  /* display: flex;
+  justify-content: center; */
 }
 
-.choco {
+.main-div {
   position: fixed;
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 .random-button-section {
-  display: flex;
-  flex-direction: column;
-  width: 5rem;
+  /* width: 5rem; */
   height: 5rem;
+  display: flex;
 }
 .random-button {
   width: 7rem;
   height: 4rem;
+  position: absolute;
+  left: 47.2%;
+}
+.color-display {
+  width: 10rem;
+  height: 5rem;
+  /* border-radius: 1rem; */
+  /* position: absolute;
+  left: 20%; */
+  /* align-self: center; */
+}
+h4 {
+  height: 2rem;
+  font-size: 2rem;
+}
+/* p {
+  font-size: 1rem;
+} */
+.com-name {
+  font-size: 1.5rem;
 }
